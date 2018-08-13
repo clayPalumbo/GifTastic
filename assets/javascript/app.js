@@ -1,5 +1,5 @@
 
-$(document).ready(function () {
+//$(document).ready(function () {
 	var movies = ["Step Brothers", "SuperBad", "This is the End"];
 
 	// Add buttons for original movies array
@@ -22,11 +22,13 @@ $(document).ready(function () {
 	});
 
 
+
 	// Getting gifs from api... onto html
-	$("button").on("click", function () {
+	$("#movie-buttons").on("click", "button", function () {
 		var movie = $(this).attr("data-movie");
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
 			movie + "&api_key=dc6zaTOxFJmzC&limit=10"
+			console.log($(this).attr("data-movie"));
 
 		$.ajax({
 			url: queryURL,
@@ -69,6 +71,6 @@ $(document).ready(function () {
 
 	$(document).on("click", ".gif", changeState);
 
-});
+//});
 
 
